@@ -83,8 +83,6 @@
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
 
-        android:screenOrientation="portrait" 
-
         var meta = document.createElement('meta');
         meta.name = 'viewport';
         meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
@@ -124,35 +122,5 @@
       document.body.appendChild(script);
 
     </script>
-
-    <style>
-      body {
-    transform: rotate(0deg);
-    transform-origin: center center;
-    overflow: hidden;
-  }
-
-  @media screen and (orientation: landscape) {
-    body::before {
-      content: "Lütfen cihazınızı dik tutun";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: black;
-      color: white;
-      font-size: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-
-    #unity-container {
-      display: none;
-    }
-  }
-    </style>
   </body>
 </html>
