@@ -56,6 +56,15 @@
         updateBannerVisibility();
       }
 
+      fullscreenButton.onclick = () => {
+        unityInstance.SetFullscreen(1);
+        if (screen.orientation && screen.orientation.lock) {
+          screen.orientation.lock("portrait").catch(function(error) {
+            console.warn("Ekran yönü kilitlenemedi:", error);
+          });
+        }
+      };
+
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/deneme.loader.js";
       var config = {
